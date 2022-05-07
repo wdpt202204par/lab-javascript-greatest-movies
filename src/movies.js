@@ -1,7 +1,7 @@
 // The `movies` array from the file `src/data.js`.
 //console.log('movies: ', movies);//
 
-
+console.log("salut");
 
 // Iteration 1: All directors? - Get the array of all directors.
 // _Bonus_: It seems some of the directors had directed multiple movies so they will pop up multiple times in the array of directors.
@@ -15,7 +15,16 @@ function getAllDirectors(movies) {
 
 
 // Iteration 2: Steven Spielberg. The best? - How many drama movies did STEVEN SPIELBERG direct?
-function howManyMovies() { }
+function howManyMovies(movies) {
+  let spielbergMovies = movies.filter(function(movie){
+    return movie.director === 'Steven Spielberg';
+  })
+  let spielbergDramas = spielbergMovies.filter(function(movie){
+    return movie.genre.includes('Drama')
+  })
+  return spielbergDramas.length;
+ }
+ 
 
 // Iteration 3: All scores average - Get the average of all scores with 2 decimals
 function scoresAverage() { }
