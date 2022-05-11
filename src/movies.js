@@ -100,7 +100,29 @@ function orderAlphabetically(movies) {
 }
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
-function turnHoursToMinutes() { }
+function turnHoursToMinutes(movies) {
+  let minuteMovies=movies.map(function(movie){
+    let minuteMovie = {
+      title:    movie.title,
+      year:     movie.year,
+      director: movie.director,
+      duration: movie.duration,
+      genre:    movie.genre,
+      score:    movie.score,
+    };
+    let hours=parseInt(movie.duration.split(' ')[0]);
+    let minutes=parseInt(movie.duration.split(' ')[1]);
+  
+    minuteMovie.duration=hours+minutes
+
+    return minuteMovie;
+  })
+  return minuteMovies;
+}
+// not finished, 2 tests left
+
+
+
 
 // BONUS - Iteration 8: Best yearly score average - Best yearly score average
 function bestYearAvg() { }
